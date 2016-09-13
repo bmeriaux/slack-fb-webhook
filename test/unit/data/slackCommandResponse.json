@@ -1,0 +1,12 @@
+{
+  "response_type": "in_channel",
+  "attachments": [
+    {
+      "fallback": "Steve a posté sur le groupe WeekEnd",
+      "author_name": "Steve",
+      "title": "Post sur le groupe facebook WeekEnd",
+      "title_link": "https://www.facebook.com/groups/1234",
+      "text": "Steve a posté dans le channel \"test\": 94070"
+    }
+  ]
+}

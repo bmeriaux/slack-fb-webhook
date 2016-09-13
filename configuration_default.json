@@ -1,0 +1,34 @@
+{
+  "api": {
+    "applicationName": "slack-fb-webhook",
+    "listeningAddress": "localhost",
+    "port": 3330
+  },
+  "swagger": {
+    "host": "localhost",
+    "protocol": "http"
+  },
+  "log": {
+    "level": "debug",
+    "stream": "process.stdout",
+    "path": "",
+    "period": "1d",
+    "count": 10
+  },
+  "fb": {
+    "login": "toto",
+    "password": "toto"
+  },
+  "slack": {
+    "commands": {
+      "postGroupFb": {
+        "tokens": [
+          "token"
+        ]
+      }
+    },
+    "teamIds": [
+      "teamId"
+    ]
+  }
+}

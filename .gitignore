@@ -1,0 +1,6 @@
+node_modules
+.idea
+*.iml
+screenshots
+configuration_custom.json
+logs
