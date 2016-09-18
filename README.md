@@ -1,4 +1,4 @@
-#Slack ot FB Webhook
+#Slack to FB Webhook
 
 This webhook gives the ability to post on Facebook from a slack command
 It uses phantomJs to browse like a real user and avoid the limitations of the Facebook Api (post on private groupe, is not possible anymore)
@@ -32,4 +32,4 @@ $ npm start
 
 - Node v4.5
 - a valid Facebook account
-- a slack team
+- a slack _team_
