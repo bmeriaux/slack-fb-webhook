@@ -17,7 +17,7 @@ exports.postOnFbGroup = postOnFbGroup
 function postOnFbGroup (groupId, contentToPost) {
   const fbLoginPage = new FbLoginPage(client)
   const fbGroupPage = new FbGroupPage(client, groupId)
-
+  const startDate = new Date()
   return client.init()
     .then(() => fbLoginPage.deleteAllCookies())
     .then(() => fbLoginPage.goTo())
@@ -27,6 +27,8 @@ function postOnFbGroup (groupId, contentToPost) {
     .then(() => fbGroupPage.getTitle())
     .then((title) => {
       client.end()
+      const postDuration = new Date() - startDate
+      logger.info('successful post on fb group ' + groupId + ' in :' + postDuration + ' ms')
       return title
     })
     .catch((err) => {
