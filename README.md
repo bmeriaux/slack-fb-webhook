@@ -1,7 +1,7 @@
 #Slack to FB Webhook
 
-This webhook gives the ability to post on Facebook from a slack command
-It uses phantomJs to browse like a real user and avoid the limitations of the Facebook Api (post on private groupe, is not possible anymore)
+This webhook gives the ability to post on Facebook from a [slack command](https://api.slack.com/slash-commands)
+It uses phantomJs to browse like a real user and avoid the limitations of the Facebook Api (ex: post on private group is not possible anymore)
 
 ##How to use it:
 - override default configuration with your slack teamId, slack command Tokens, and Facebook credentials:
