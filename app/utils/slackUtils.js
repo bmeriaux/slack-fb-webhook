@@ -2,11 +2,19 @@
 
 exports.formatTextToFbPost = formatTextToFbPost
 function formatTextToFbPost (channelName, author, text) {
-  return author + ' a posté dans le channel "' + channelName + '": ' + text
+  return text + ' - par ' + author + ' (' + channelName + ')'
 }
 
-exports.formatResponseAfterFbPost = formatResponseAfterFbPost
-function formatResponseAfterFbPost (groupId, groupName, contentToPost, author) {
+exports.formatSimpleResponseAfterFbPost = formatSimpleResponseAfterFbPost
+function formatSimpleResponseAfterFbPost (author) {
+  return {
+    'response_type': 'Ephemeral',
+    'text': 'Le post de ' + author + ' est en cours'
+  }
+}
+
+exports.formatCompleteResponseAfterFbPost = formatCompleteResponseAfterFbPost
+function formatCompleteResponseAfterFbPost (groupId, groupName, contentToPost, author) {
   return {
     'response_type': 'in_channel',
     'attachments': [

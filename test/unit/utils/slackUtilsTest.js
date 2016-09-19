@@ -14,12 +14,12 @@ describe('slackUtils', () => {
       this.result = slackUtils.formatTextToFbPost(channelName, author, text)
     })
     it('should correctly format params to fb post', () => {
-      this.result.should.equal('benoit a posté dans le channel "soirée": Hello, ca vous dit un bar ce soir ?')
+      this.result.should.equal('Hello, ca vous dit un bar ce soir ? - par benoit (soirée)')
     })
   })
-  describe('formatResponseAfterFbPost', () => {
+  describe('formatCompleteResponseAfterFbPost', () => {
     before(() => {
-      this.result = slackUtils.formatResponseAfterFbPost(groupId, groupName, text, author)
+      this.result = slackUtils.formatCompleteResponseAfterFbPost(groupId, groupName, text, author)
     })
     it('should correctly format params to fb post', () => {
       this.result.should.deep.equal({
@@ -33,6 +33,17 @@ describe('slackUtils', () => {
           }
         ],
         response_type: 'in_channel'
+      })
+    })
+  })
+  describe('formatSimpleResponseAfterFbPost', () => {
+    before(() => {
+      this.result = slackUtils.formatSimpleResponseAfterFbPost(author)
+    })
+    it('should correctly format params to fb post', () => {
+      this.result.should.deep.equal({
+        text: 'Le post de benoit est en cours',
+        response_type: 'Ephemeral'
       })
     })
   })

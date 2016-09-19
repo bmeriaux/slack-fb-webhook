@@ -3,7 +3,8 @@ const joi = require('joi')
 
 module.exports = joi.object({
   response_type: joi.string().required().example('in_channel'),
-  attachments: joi.array().items({
+  text: joi.string().optional().example('Optional text'),
+  attachments: joi.array().optional().items({
     fallback: joi.string().required().example('Required plain-text summary of the attachment.'),
     color: joi.string().example('#36a64f'),
     pretext: joi.string().example('Optional text that appears above the attachment block'),

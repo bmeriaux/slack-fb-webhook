@@ -27,6 +27,8 @@
     "joi": "^9.0.4",
     "nconf": "^0.8.4",
     "phantomjs-prebuilt": "^2.1.12",
+    "request": "^2.75.0",
+    "request-promise-native": "^1.0.3",
     "vision": "^4.1.0",
     "webdriverio": "^4.2.15"
   },
