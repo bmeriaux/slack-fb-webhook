@@ -5,11 +5,11 @@ function formatTextToFbPost (channelName, author, text) {
   return text + ' - par ' + author + ' (' + channelName + ')'
 }
 
-exports.formatSimpleResponseAfterFbPost = formatSimpleResponseAfterFbPost
-function formatSimpleResponseAfterFbPost (author) {
+exports.formatSimpleResponseBeforeFbPost = formatSimpleResponseBeforeFbPost
+function formatSimpleResponseBeforeFbPost () {
   return {
     'response_type': 'Ephemeral',
-    'text': 'Le post de ' + author + ' est en cours'
+    'text': 'Votre post est en cours'
   }
 }
 

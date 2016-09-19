@@ -36,13 +36,13 @@ describe('slackUtils', () => {
       })
     })
   })
-  describe('formatSimpleResponseAfterFbPost', () => {
+  describe('formatSimpleResponseBeforeFbPost', () => {
     before(() => {
-      this.result = slackUtils.formatSimpleResponseAfterFbPost(author)
+      this.result = slackUtils.formatSimpleResponseBeforeFbPost(author)
     })
     it('should correctly format params to fb post', () => {
       this.result.should.deep.equal({
-        text: 'Le post de benoit est en cours',
+        text: 'Votre post est en cours',
         response_type: 'Ephemeral'
       })
     })
