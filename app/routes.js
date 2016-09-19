@@ -17,7 +17,7 @@ function fbGroupRoutes () {
           (req, reply) => preHandlers.checkCommandToken(req, reply, 'postGroupFb')
         ],
         description: 'Post on a facebook group',
-        tags: ['facebook', 'groups'],
+        tags: ['api', 'facebook', 'groups'],
         plugins: {
           'hapi-swagger': {
             responses: {
