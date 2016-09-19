@@ -15,10 +15,10 @@ function postOnFbGroup (req, reply) {
   const fbGroupId = req.params.groupId
   return Promise.resolve(responseUtils.replySuccess(reply, 200, slackUtils.formatSimpleResponseBeforeFbPost()))
     .then(() => fbGroupPostScenario.postOnFbGroup(fbGroupId, contentToPost)
-      .then((groupName) => slackClient.commandAsyncResponse(response_url, slackUtils.formatCompleteResponseAfterFbPost(fbGroupId, groupName, text, author)))
+      .then((groupName) => slackClient.commandAsyncResponse(response_url, slackUtils.formatCompleteResponseAfterFbPost(fbGroupId, groupName, text, author), req.id))
       .catch((err) => {
         logger.error(err)
-        slackClient.commandAsyncResponse(response_url, slackUtils.formatCompleteResponseAfterFbPost(fbGroupId, '', 'Le post a échoué', author))
+        slackClient.commandAsyncResponse(response_url, slackUtils.formatCompleteResponseAfterFbPost(fbGroupId, '', 'Le post a échoué', author), req.id)
           .catch((err) => logger.error(err))
       }))
 }

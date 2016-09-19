@@ -34,8 +34,8 @@ describe('fbHandlers', () => {
         payload: slackCommandPayload,
         params: {
           groupId: '1234'
-        }
-
+        },
+        id: 'reqId'
       }
       before(() => {
         this.fbGroupPostScenarioPostOnFbGroup.returns(Promise.resolve('WeekEnd'))
@@ -54,7 +54,7 @@ describe('fbHandlers', () => {
         this.replySuccessStub.args[ 0 ].should.deep.equal([ reply, 200, slackSimpleCommandResponse ])
       })
       it('should invoke slackClient.commandAsyncResponse with the appropriate params', () => {
-        this.slackClientCommandAsyncResponseStub.args[ 0 ].should.deep.equal([ slackCommandPayload.response_url, slackCompleteCommandResponse ])
+        this.slackClientCommandAsyncResponseStub.args[ 0 ].should.deep.equal([ slackCommandPayload.response_url, slackCompleteCommandResponse, 'reqId' ])
       })
     })
     describe('post on fb failed', () => {
@@ -62,8 +62,8 @@ describe('fbHandlers', () => {
         payload: slackCommandPayload,
         params: {
           groupId: '1234'
-        }
-
+        },
+        id: 'reqId'
       }
       before(() => {
         this.fbGroupPostScenarioPostOnFbGroup.returns(Promise.reject(new Error('post failed')))
@@ -82,7 +82,7 @@ describe('fbHandlers', () => {
         this.replySuccessStub.args[ 0 ].should.deep.equal([ reply, 200, slackSimpleCommandResponse ])
       })
       it('should invoke slackClient.commandAsyncResponse with the appropriate params', () => {
-        this.slackClientCommandAsyncResponseStub.args[ 0 ].should.deep.equal([ slackCommandPayload.response_url, slackCompleteCommandFailedResponse ])
+        this.slackClientCommandAsyncResponseStub.args[ 0 ].should.deep.equal([ slackCommandPayload.response_url, slackCompleteCommandFailedResponse, 'reqId' ])
       })
     })
   })
