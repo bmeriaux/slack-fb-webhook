@@ -14,7 +14,7 @@ describe('slackUtils', () => {
       this.result = slackUtils.formatTextToFbPost(channelName, author, text)
     })
     it('should correctly format params to fb post', () => {
-      this.result.should.equal('Hello, ca vous dit un bar ce soir ? - par benoit (soirée)')
+      this.result.should.equal('          Hello, ca vous dit un bar ce soir ? - par benoit (soirée)')
     })
   })
   describe('formatCompleteResponseAfterFbPost', () => {

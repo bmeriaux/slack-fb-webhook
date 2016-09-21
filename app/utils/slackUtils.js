@@ -2,7 +2,8 @@
 
 exports.formatTextToFbPost = formatTextToFbPost
 function formatTextToFbPost (channelName, author, text) {
-  return text + ' - par ' + author + ' (' + channelName + ')'
+  // Empty string at start, otherwise post is missing characters between ~ index 4 and 8
+  return '          ' + text + ' - par ' + author + ' (' + channelName + ')'
 }
 
 exports.formatSimpleResponseBeforeFbPost = formatSimpleResponseBeforeFbPost
